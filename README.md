@@ -1,1 +1,1 @@
-This project has the purpose to create the UI.
+eLibrary-ui application
