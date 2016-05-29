@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="bower_config/bootstrap/dist/css/bootstrap.min.css"/>
 </head>
-<body>
-<ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-</ul>
-
-<div ng-view></div>
-
-<div class="btn-group">
-    <label class="btn btn-primary" ng-model="radioModel" btn-radio="'Left'">Left</label>
-    <label class="btn btn-primary" ng-model="radioModel" btn-radio="'Middle'">Middle</label>
-    <label class="btn btn-primary" ng-model="radioModel" btn-radio="'Right'">Right</label>
+<body ng-app="App">
+<div class="box box-default" ng-controller="LibraryCtrl as vm">
+    <table class="table">
+        <tbody>
+        <tr>
+            <th style="width: 10px">BookId</th>
+            <th style="width: 10px">ISBN</th>
+            <th style="width: 30px">TITLE</th>
+        </tr>
+        <tr ng-repeat="book in vm.books">
+            <td>{{book.bookId}}</td>
+            <td>{{book.isbn}}</td>
+            <td>{{book.title}}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-<script src="app/app.js"></script>
+<script src="bower_config/angular/angular.js" type="text/javascript"></script>
+<script src="app.js" type="text/javascript"></script>
+<script src="app/components/library/libraryCtrl.js" type="text/javascript"></script>
+<script src="app/services/libraryHttp.service.js" type="text/javascript"></script>
+<!--<script src="app/services/dataHttp.module.js"></script>-->
 </body>
 </html>
