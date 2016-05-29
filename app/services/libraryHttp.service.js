@@ -13,7 +13,7 @@
         }
 
         function getBookById(){
-            return $http.get(BASE_URL + 'book/fetch/69')
+            return $http.get(BASE_URL + 'book/search/LUNI?size=5')
                 .then(sendGetData)
                 .catch(sendGetError)
         }

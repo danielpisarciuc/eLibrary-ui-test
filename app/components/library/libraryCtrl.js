@@ -7,7 +7,7 @@
     function LibraryCtrl(libraryHttp){
         var vm = this;
 
-        vm.books = {};
+        vm.books = [];
 
         console.log('start to get book data..');
         libraryHttp.getBookById()
